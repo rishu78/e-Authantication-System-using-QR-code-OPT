@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP validation Page</title>
+    <style>
+    body {
+         background-image: url('{% static 'qrimages/gui.jpg' %}');
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         background-size: 100% 100%;
+    }
+    </style>
+    <form action="{% url 'validate_otp' %}" method="post">
+        {% csrf_token %}
+    <body>
+        <table align="center" border="2">
+            <tr>
+                <th>
+                    <img src="{% static 'qrimages/rishabh.jpg' %}">
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <input type="password" placeholder="OTP" required name="otp">
+                </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <button type="submit">Verify</button>
+                </th>
+            </tr>
+
+        </table>
+        </form>
+    </body>
+</head>
+</html>
